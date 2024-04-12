@@ -11,38 +11,38 @@
   <main>
     <section class="form-container">
       <h1>Registrarse</h1>
-      <form class="form">
+      <form class="form" novalidate>
         <ul class="form_list">
           <li class="form_item">
             <label for="rut" class="form_label">
               <p class="form_text">Rut</p>
             </label>
-            <input type="text" id="rut" name="rut" required />
-            <span class="form_message"></span>
+            <input class="form_input" type="text" id="rut" name="rut" required />
+            <span id="rutMessage" class="form_message rut-input-error"></span>
           </li>
           <li class="form_item">
             <label for="name" class="form_label">
               <p class="form_text">Nombre</p>
             </label>
-            <input type="text" id="name" name="name" required />
-            <span class="form_message"></span>
+            <input class="form_input" type="text" id="name" name="name" required />
+            <span class="form_message name-input-error"></span>
           </li>
           <li class="form_item">
             <label for="age" class="form_label">
               <p class="form_text">Edad</p>
             </label>
-            <input type="number" id="age" name="age" required />
-            <span class="form_message"></span>
+            <input class="form_input" type="number" id="age" name="age" required />
+            <span class="form_message number-input-error"></span>
           </li>
           <li class="form_item">
             <label for="email" class="form_label">
               <p class="form_text">Email</p>
             </label>
-            <input type="email" id="email" name="email" required />
-            <span class="form_message"></span>
+            <input class="form_input" type="email" id="email" name="email" required />
+            <span class="form_message email-input-error"></span>
           </li>
         </ul>
-        <button class="form_button" type="submit">Enviar</button>
+        <button class="form_submit" type="submit">Enviar</button>
       </form>
     </section>
     <section class="info-container">

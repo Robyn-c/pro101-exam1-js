@@ -9,11 +9,11 @@
 html,
 body {
   height: 100%;
-  background-color: hsl(269, 68%, 7%);
+  background-color: hsl(210, 15%, 5%);
   color: hsl(245, 79%, 94%);
 
-  --primary: hsl(269, 45%, 13%);
-  --secondary: hsl(343, 79%, 31%);
+  --primary: hsl(228, 12%, 8%);
+  --secondary: hsl(199, 27%, 18%);
   --text: hsl(245, 79%, 94%);
 
 }
@@ -55,16 +55,28 @@ input, input[type="email"] {
   font-weight: 600;
   font-size: 1rem;
   
-  outline-color: var(--secondary);
+  outline-color: #4E4A60;
   outline-offset: 0px;
   outline-width: 3px;
-  outline-style: none;
+  outline-style: solid;
   
   transition: all 100ms linear;
 }
 
 input:focus {
   outline-style: solid;
+}
+
+.form_input_valid {
+  outline-color: green;
+}
+
+.form_input_invalid {
+  outline-color: red;
+}
+
+.form_message_invalid {
+  color: red;
 }
 
 
@@ -107,9 +119,15 @@ input:focus {
   color: var(--text);
   width: 100%;
   text-align: center;
-  background-color: hsl(343, 61%, 16%);
+  background-color: hsl(251, 13%, 33%);
   padding: 1rem;
   border-radius: 0.5rem;
+  
+}
+
+.form_button_inactive {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .info-container {
