@@ -73,7 +73,7 @@ cardNumberInput.addEventListener("input", (e) => {
     return "Unknown card type";
   } else {
     imgElement.classList.remove("hidden");
-    imgElement.src = `/assets/cc-${cardType}.svg`;
+    imgElement.src = `assets/cc-${cardType}.svg`;
   }
 });
 
@@ -167,8 +167,15 @@ const inputList = Array.from(formElement.querySelectorAll(".form_input"));
 
 const buttonElement = document.querySelector(".form_submit");
 
+toggleButtonState(inputList, buttonElement);
 inputList.forEach((inputElement) => {
   inputElement.addEventListener("input", () => {
     toggleButtonState(inputList, buttonElement);
   })
 })
+
+formElement.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log("Submit!");
+})
+

@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
+  border: 0;
 }
+
 
 :root,
 html,
@@ -17,10 +19,20 @@ body {
   height: 100%;
   background-color: var(--background);
   color: var(--text);
+  font-family: "Inter", sans-serif;
+}
+
+header {
+  padding: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #E6E4FC;
+  font-size: 2rem;
 }
 
 main {
-  font-family: "Inter", sans-serif;
   display: flex;
   height: 100%;
   align-items: center;

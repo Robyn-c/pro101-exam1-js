@@ -3,8 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   border: 0;
 }
 
@@ -14,11 +14,23 @@ body {
   height: 100%;
 }
 
+header {
+  padding: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #E6E4FC;
+  font-size: 2rem;
+}
+
+
 :root {
   --background: #0A0613;
   --text: #E2DBF4;
   background-color: var(--background);
   color: var(--text);
+  font-family: "Inter", sans-serif;
 }
 
 input {
@@ -26,7 +38,6 @@ input {
 }
 
 main {
-  font-family: "Inter", sans-serif;
   display: grid;
   height: 100%;
   place-items: center;

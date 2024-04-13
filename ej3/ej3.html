@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="index.css" rel="stylesheet" />
-  <script src="index.js" defer></script>
+  <link href="ej3.css" rel="stylesheet" />
+  <script src="ej3.js" defer></script>
   <title>Formulario Tarjeta de Crédito</title>
 </head>
 <body>
+  <header>
+    <a href="../index.html">&lt; Volver</a>
+  </header>
   <main>
     <section class="form-container">
       <h1>Tarjeta de Crédito</h1>
@@ -28,7 +31,7 @@
             <span>Número de tarjeta</span>
             <div class="form_div-icon">
               <img class="icon form_icon" src="" />
-              <input class="form_input" type="text" id="card_number" name="card_number" placeholder="1234 5679 8765 4321" minlength="16" maxlength="24" required/>
+              <input class="form_input" type="text" id="card_number" name="card_number" placeholder="1234 5679 8765 4321" minlength="16" maxlength="19" required/>
             </div>
             <span class="form_error hidden" id="invalidCard">Tarjeta inválida</span>
           </label>
