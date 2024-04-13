@@ -33,3 +33,13 @@ a {
 a:hover {
   color: #A287C7;
 }
+
+.github {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.github:hover {
+  cursor: pointer;
+}

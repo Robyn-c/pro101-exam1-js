@@ -1,5 +1,6 @@
 
-// Alogoritmo Luhn
+// Algoritmo Luhn
+// Verifica si el número de la tarjeta es válido
 function validateLuhnAlgorithm(cardNumber) {
   let sum = 0;
   let isEven = false;
@@ -20,6 +21,7 @@ function validateLuhnAlgorithm(cardNumber) {
   return sum % 10 === 0;
 }
 
+// Devuelve el tipo de tarjeta a partir de un string
 function detectCardType(cardNumber) {
   const patterns = {
       visa: /^4[0-9]{12}(?:[0-9]{3})?$/,
@@ -37,12 +39,15 @@ function detectCardType(cardNumber) {
   return "Unknown";
 }
 
+// Mostrar error
 function showError(e, errorElement) {
   errorElement.classList.remove("hidden");
   e.target.classList.remove("form_input_valid")
   e.target.classList.add("form_input_invalid")
 }
 
+
+// Esconder error
 function hideError(e, errorElement) {
   errorElement.classList.add("hidden");
   e.target.classList.add("form_input_valid")
@@ -65,9 +70,8 @@ cardNumberInput.addEventListener("input", (e) => {
   e.target.value = e.target.value.replace(/[^0-9]+/g, '')
   e.target.value = e.target.value.replace(/(\d{4})(?=\d)/g, '$1-');
   
-  // Tipo de tarjeta
+  // Cambia el icono dentro del input 
   const cardType = detectCardType(inputValueTrimmed);
-  console.log(cardType)
   if (cardType === "Unknown") {
     imgElement.classList.add("hidden");
     return "Unknown card type";
@@ -87,6 +91,7 @@ nameInput.addEventListener("input", (e) => {
   } else {
     hideError(e, nameWarning);
   }
+  // Permitir solo letras y espacios
   e.target.value = e.target.value.replace(/[^a-zA-Z\s]+/g, '')
 })
 
@@ -98,8 +103,9 @@ const expireDateWarning = document.querySelector("#invalidDate")
 function validateExpirationDate(expirationMonth, expirationYear) {
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear();
-  const currentMonth = currentDate.getMonth() + 1; // January is 0
+  const currentMonth = currentDate.getMonth() + 1;
 
+  // Verifica si la tarjeta esta expirada
   if (expirationYear > currentYear) {
       return true;
   } else if (expirationYear === currentYear && expirationMonth >= currentMonth) {
@@ -110,7 +116,9 @@ function validateExpirationDate(expirationMonth, expirationYear) {
 }
 
 expireDateInput.addEventListener("input", (e) => {
+  // Permitir solo números
   e.target.value = e.target.value.replace(/[^0-9]+/g ,"");
+  // Añadir un / para escribir el formato MM/YY
   e.target.value = e.target.value.replace(/(\d{2})(\d{2})/, "$1/$2");
   const dateExpression = new RegExp("^(0[1-9]|1[0-2])\/?([0-9]{2})$");
   if (dateExpression.test(e.target.value)) {
