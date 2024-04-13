@@ -221,5 +221,5 @@ rutInput.addEventListener("blur", () => rutValidation(rutInput));
 
 nameInput.addEventListener("input", (evt) => {
   const nameValue = evt.target.value
-  evt.target.value = nameValue.replace(/[^a-zA-Z]/g, '');
+  evt.target.value = nameValue.replace(/[^a-zA-Z\s]/g, '');
 })

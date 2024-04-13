@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="index.css" rel="stylesheet" />
+  <script src="index.js" defer></script>
+  <title>Formulario Tarjeta de Crédito</title>
+</head>
+<body>
+  <main>
+    <section class="form-container">
+      <h1>Tarjeta de Crédito</h1>
+      <div class="form-icons">
+        <img class="icon" src="assets/cc-visa.svg" />
+        <img class="icon" src="assets/cc-mastercard.svg" />
+        <img class="icon" src="assets/cc-amex.svg" />
+        <img class="icon" src="assets/cc-discover.svg" />
+      </div>
+      <form class="form" novalidate>
+        <fieldset class="form_set">
+          <label class="form_label">
+            <span>Nombre del Titular</span>
+            <input class="form_input" type="text" id="name" name="name" placeholder="John Doe" minlength="1" required/>
+            <span class="form_error hidden" id="invalidName">Ingrese un nombre</span>
+          </label>
+          <label class="form_label">      
+            <span>Número de tarjeta</span>
+            <div class="form_div-icon">
+              <img class="icon form_icon" src="" />
+              <input class="form_input" type="text" id="card_number" name="card_number" placeholder="1234 5679 8765 4321" minlength="16" maxlength="24" required/>
+            </div>
+            <span class="form_error hidden" id="invalidCard">Tarjeta inválida</span>
+          </label>
+          <div class="form_div">
+            <label class="form_label">
+              <span>Fecha de Vencimiento</span>
+              <input class="form_input" type="text" id="expiration_date" name="expiration_date" type="date" maxlength="5" placeholder="MM/YY" required/>
+              <span class="form_error hidden" id="invalidDate">Fecha inválida</span>
+            </label>
+            <label class="form_label">
+              <span>CVV</span>
+              <input class="form_input" type="password" id="cvv" name="cvv" maxlength="4" placeholder="&bull;&bull;&bull;" required/>
+              <span class="form_error hidden" id="invalidCVV">CVV inválido</span>
+            </label>
+          </div>
+          <button class="form_submit">Enviar</button>
+        </fieldset>
+      </form>
+
+    </section>
+  </main>
+</body>
+</html>
