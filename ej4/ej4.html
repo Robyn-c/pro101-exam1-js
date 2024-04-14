@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/d1f8f29297.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="ej4.css">
+  <script src="ej4.js" defer></script>
+  <title>Ejercicio 4</title>
+</head>
+<body>
+  <header>
+    <a href="../index.html">&lt; Volver</a>
+  </header>
+  <main>
+    <section class="section">
+      <h1>Todo List</h1>
+      <form class="search-form">
+        <input type="text" name="search" placeholder="Buscar...">
+        <button class="add-button"><i class="add fa-solid fa-plus fa-lg"></i></button>
+      </form>
+      <div class="todo-container">
+        <ul class="list">
+          <li class="list_item">
+            <p>Item 1</p>
+            <div class="icon-container">
+              <button class="edit-button">
+                <i class="edit fa-solid fa-pencil fa-lg"></i>
+              </button>
+              <button class="delete-button">
+                <i class="delete fa-solid fa-trash fa-lg"></i>
+              </button>
+            </div>
+          </li>
+          <li class="list_item">Item 1</li>
+          <li class="list_item">Item 1</li>
+
+        </ul>
+      </div>
+    </section>
+    <section class="modal edit-modal hidden">
+      <h2>Editar Tarea</h2>
+      
+    </section>
+    <section class="modal add-modal hidden"></section>
+    <div class="overlay hidden"></div>
+  </main>
+</body>
+</html>

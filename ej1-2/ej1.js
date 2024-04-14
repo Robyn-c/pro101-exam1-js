@@ -2,7 +2,6 @@
 const rutInput = document.querySelector("#rut");
 const rutMessage = document.querySelector("#rutMessage");
 const nameInput = document.querySelector("#name");
-const form = document.querySelector(".form");
 
 // Validacion de formulario
 
@@ -17,7 +16,6 @@ function addEllipsis(errorMessage) {
 }
 
 function showError(inputElement, formElement, errorMessage) {
-  
     const errorElement = formElement.querySelector(`.${inputElement.id}-input-error`);
     inputElement.classList.add("form_input_invalid")
     inputElement.classList.remove("form_input_valid")
@@ -140,8 +138,7 @@ function enableValidation() {
     onSubmit(inputList, formElement, infoContainer)
   });
 
-  formList = formElement.querySelector(".form_list");
-  setEventListeners(formList, inputList);
+  setEventListeners(formElement, inputList);
   console.log("enableValidation")
   
     if (localStorage.getItem("formData") !== null) {
@@ -149,8 +146,6 @@ function enableValidation() {
       console.log("getItemOnLoad")
     } 
   }
-
-
 
 enableValidation();
 
@@ -219,6 +214,7 @@ rutInput.addEventListener("input", (evt) => {
 
 rutInput.addEventListener("blur", () => rutValidation(rutInput));
 
+// Evita que se puedan escribir numeros en el campo del nombre
 nameInput.addEventListener("input", (evt) => {
   const nameValue = evt.target.value
   evt.target.value = nameValue.replace(/[^a-zA-Z\s]/g, '');

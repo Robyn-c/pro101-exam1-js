@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root,
+html,
+body {
+  height: 100%;
+  font-family: "Quicksand", sans-serif;
+  color: #050804;
+  background-color: #EEF8FD;
+}
+
+main {
+  display: grid;
+  place-items: center;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background: none;
+}
+
+a {
+  text-decoration: none;
+  color: #050804;
+  font-size: 2rem;
+}
+
+input {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  outline-color: #239DE5;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+
+.todo-container {
+  background-color: #E4F3FB;
+  border-radius: 0.5rem;
+}
+ 
+.list_item {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid hsla(246, 67%, 16%, 0.7);
+}
+
+.list_item:last-child {
+  border-radius: 0.5rem;
+}
+
+.add {
+  color: #FFFFFF;
+}
+
+.add-button {
+  background-color: #239DE5;
+  padding: 0.75rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.icon-container {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.delete {
+  color: #239DE5;
+  cursor: pointer;
+}
+
+.edit {
+  color: #239DE5;
+  cursor: pointer;
+  background: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}

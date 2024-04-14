@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,56 +7,56 @@
   <script src="ej1.js" defer></script>
   <title>Ejercicio 1</title>
 </head>
-<body>
-  <header>
-    <a href="../index.html">&lt; Volver</a>
-  </header>
-  <main>
-    <section class="form-container">
-      <h1>Registrarse</h1>
-      <form class="form" novalidate>
-        <ul class="form_list">
-          <li class="form_item">
-            <label for="rut" class="form_label">
-              <p class="form_text">Rut</p>
-            </label>
-            <input class="form_input" type="text" id="rut" name="rut" minlength="7" required />
-            <span id="rutMessage" class="form_message rut-input-error"></span>
-          </li>
-          <li class="form_item">
-            <label for="name" class="form_label">
-              <p class="form_text">Nombre</p>
-            </label>
-            <input class="form_input" type="text" id="name" name="name" maxlength="42" required />
-            <span class="form_message name-input-error"></span>
-          </li>
-          <li class="form_item">
-            <label for="age" class="form_label">
-              <p class="form_text">Edad</p>
-            </label>
-            <input class="form_input" type="number" id="age" name="age" max="120" required />
-            <span class="form_message age-input-error"></span>
-          </li>
-          <li class="form_item">
-            <label for="email" class="form_label">
-              <p class="form_text">Email</p>
-            </label>
-            <input class="form_input" type="email" id="email" name="email" minlength="1" required />
-            <span class="form_message email-input-error"></span>
-          </li>
-        </ul>
-        <button class="button form_submit" type="submit">Enviar</button>
-      </form>
-    </section>
-    <section class="info">
-      <div class="info_title">
-        <h1>Información</h1>
-        <p>Envia el formulario para ver la informacion</p>
-      </div>
-      <div class="info_container">
-      </div>
-      <button class="button info_delete">Eliminar</button>
-    </section>
-  </main>
-</body>
+  <body>
+    <header>
+      <a href="../index.html">&lt; Volver</a>
+    </header>
+    <main>
+      <section class="form-container">
+        <h1>Registrarse</h1>
+        <form class="form" novalidate>
+          <ul class="form_list">
+            <li class="form_item">
+              <label for="rut" class="form_label">
+                <p class="form_text">Rut</p>
+              </label>
+              <input class="form_input" type="text" id="rut" name="rut" minlength="7" required />
+              <span id="rutMessage" class="form_message rut-input-error"></span>
+            </li>
+            <li class="form_item">
+              <label for="name" class="form_label">
+                <p class="form_text">Nombre</p>
+              </label>
+              <input class="form_input" type="text" id="name" name="name" maxlength="42" required />
+              <span class="form_message name-input-error"></span>
+            </li>
+            <li class="form_item">
+              <label for="age" class="form_label">
+                <p class="form_text">Edad</p>
+              </label>
+              <input class="form_input" type="number" id="age" name="age" max="120" required />
+              <span class="form_message age-input-error"></span>
+            </li>
+            <li class="form_item">
+              <label for="email" class="form_label">
+                <p class="form_text">Email</p>
+              </label>
+              <input class="form_input" type="email" id="email" name="email" minlength="1" required />
+              <span class="form_message email-input-error"></span>
+            </li>
+          </ul>
+          <button class="button form_submit" type="submit">Enviar</button>
+        </form>
+      </section>
+      <section class="info">
+        <div class="info_title">
+          <h1>Información</h1>
+          <p>Envia el formulario para ver la informacion</p>
+        </div>
+        <div class="info_container">
+        </div>
+        <button class="button info_delete">Eliminar</button>
+      </section>
+    </main>
+  </body>
 </html>
