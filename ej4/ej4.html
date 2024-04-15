@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sl-theme-dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/d1f8f29297.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="ej4.css">
-  <script src="ej4.js" defer></script>
+  <script defer type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/shoelace-autoloader.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/themes/dark.css" />
+  <link rel="stylesheet" href="./ej4.css" />
+
   <title>Ejercicio 4</title>
 </head>
 <body>
@@ -13,37 +16,36 @@
     <a href="../index.html">&lt; Volver</a>
   </header>
   <main>
-    <section class="section">
+    <div class="title-container">
       <h1>Todo List</h1>
-      <form class="search-form">
-        <input type="text" name="search" placeholder="Buscar...">
-        <button class="add-button"><i class="add fa-solid fa-plus fa-lg"></i></button>
-      </form>
-      <div class="todo-container">
-        <ul class="list">
-          <li class="list_item">
-            <p>Item 1</p>
-            <div class="icon-container">
-              <button class="edit-button">
-                <i class="edit fa-solid fa-pencil fa-lg"></i>
-              </button>
-              <button class="delete-button">
-                <i class="delete fa-solid fa-trash fa-lg"></i>
-              </button>
-            </div>
-          </li>
-          <li class="list_item">Item 1</li>
-          <li class="list_item">Item 1</li>
-
-        </ul>
-      </div>
-    </section>
-    <section class="modal edit-modal hidden">
-      <h2>Editar Tarea</h2>
-      
-    </section>
-    <section class="modal add-modal hidden"></section>
-    <div class="overlay hidden"></div>
+      <sl-icon-button class="add-button" name="plus-lg" label="add"></sl-icon-button>
+    </div>
+    <ul class="todo-container">
+    </ul>
   </main>
+  <sl-dialog label="Añadir tarea" class="add-modal">
+    <form novalidate class="form add-modal_form">
+      <sl-input class="form__input add-modal_name" id="add-modal_name" name="add-modal_name" label="Nombre" required></sl-input>
+      <span class="form_message add-modal_name-error"></span>
+      <sl-button class="form__submit add-modal_submit" type="submit" slot="footer" variant="primary">Añadir</sl-button>
+    </form>
+  </sl-dialog>
+  <sl-dialog label="Editar tarea" class="edit-modal">
+    <form class="form edit-modal_form">
+      <sl-input class="form__input edit-modal_name" id="edit-modal_name" name="edit-modal_name" label="Nombre" required></sl-input>
+      <span class="form_message edit-modal_name-error"></span>
+      <sl-button class="form__submit edit-modal_submit" type="submit" slot="footer" variant="primary">Añadir</sl-button>
+    </form>
+  </sl-dialog>
+  <template id="todo-template">
+    <li class="todo_item">
+      <p class="todo_name">Todo item 1</p>
+      <sl-button-group label="Alignment">
+<!--         <sl-icon-button class="edit-button" name="pencil-fill" label="edit"></sl-icon-button>
+ -->        <sl-icon-button class="delete-button" name="trash-fill" label="delete"></sl-icon-button>
+      </sl-button-group>
+    </li>
+  </template>
+  <script src="ej4.js"></script>
 </body>
 </html>

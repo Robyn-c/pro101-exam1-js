@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
-
 * {
   padding: 0;
   margin: 0;
@@ -8,108 +7,127 @@
   box-sizing: border-box;
 }
 
+:not(:defined) {
+  visibility: hidden;
+}
+
 :root,
 html,
 body {
   height: 100%;
   font-family: "Quicksand", sans-serif;
-  color: #050804;
-  background-color: #EEF8FD;
+  color: #F2F2F2;
+  background-color: #03060E;
+}
+
+header {
+  padding: 2rem;
 }
 
 main {
-  display: grid;
-  place-items: center;
+  display: grid; 
+  place-content: center;
+  gap: 2rem;
+  text-align: center;
 }
 
-h1 {
-  font-size: 3rem;
-  font-weight: 400;
+a {
+  text-decoration: none;
+  color: #F2F2F2;
+  font-size: 1.5rem;
 }
 
 li {
   list-style: none;
 }
 
-button {
-  background: none;
+.title-container {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
 }
 
-a {
-  text-decoration: none;
-  color: #050804;
-  font-size: 2rem;
-}
 
-input {
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  outline-color: #239DE5;
-}
 
-.section {
+.todo-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-
 }
-
-.todo-container {
-  background-color: #E4F3FB;
+  
+.todo_item {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: 0.75rem;
   border-radius: 0.5rem;
-}
- 
-.list_item {
-  padding: 1rem;
+  background-color: #1C2439;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid hsla(246, 67%, 16%, 0.7);
-}
-
-.list_item:last-child {
-  border-radius: 0.5rem;
-}
-
-.add {
-  color: #FFFFFF;
+  gap: 2rem;
+  min-width: 300px;
 }
 
 .add-button {
-  background-color: #239DE5;
-  padding: 0.75rem;
-  cursor: pointer;
+  font-size: 2rem;
+  background-color: #1C2439;
   border-radius: 0.5rem;
 }
 
-.icon-container {
+
+sl-icon-button::part(base) {
+  color: #F2F2F2;
+}
+
+sl-icon-button::part(base):hover {
+  color: #8398E6;
+}
+
+.add-modal_form {
   display: flex;
-  gap: 0.75rem;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.delete {
-  color: #239DE5;
-  cursor: pointer;
+.add-modal_name::part(form-control) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
 }
 
-.edit {
-  color: #239DE5;
-  cursor: pointer;
-  background: none;
+.add-modal_name::part(form-control-label) {
+  display: flex;
+  gap: 0.5rem;
 }
 
-.hidden {
-  display: none;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.add-modal_name::part(form-control-input) {
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(3px);
-  z-index: 1;
 }
+
+.add-modal_submit {
+  margin-left: auto;
+}
+
+.button_inactive {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+.form_message {
+  color: red;
+}
+
+sl-input[data-user-invalid]::part(base) {
+  border-color: red;
+}
+
+sl-input:focus-within[data-user-invalid]::part(base) {
+  outline: none;
+}
+
+[data-user-invalid]::part(form-control-label) {
+  color : red;
+}
+
