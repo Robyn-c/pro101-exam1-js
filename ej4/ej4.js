@@ -20,8 +20,36 @@ function addTodo(nameValue) {
     console.log("delete")
   })
   todoContainer.append(todoElement);
-  saveToLocalStorage();
+  saveTasksToLocalStorage();
 
+}
+
+function saveTasksToLocalStorage() {
+  const tasks = [];
+  const taskItems = todoContainer.getElementsByClassName("todo_item");
+  
+  for (let i = 0; i < taskItems.length; i++) {
+    tasks.push(taskItems[i].textContent);
+  }
+
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+ }
+
+function loadTasksFromLocalStorage() {
+  const tasks = JSON.parse(localStorage.getItem("tasks"));
+  if (tasks) {
+    tasks.forEach(taskText => {
+      const todoTemplate = document.querySelector("#todo-template").content;
+      const todoElement = todoTemplate.querySelector(".todo_item").cloneNode(true);
+      const deleteButton = todoElement.querySelector(".delete-button");
+      todoElement.querySelector(".todo_name").textContent = taskText;
+      deleteButton.addEventListener('click', (e) => {
+        e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode);
+        console.log("delete")
+      })
+      todoContainer.append(todoElement);
+    })
+  }
 }
 
   addModalForm.addEventListener("submit", (evt) => {
@@ -77,6 +105,10 @@ function addTodo(nameValue) {
     const inputElement = formElement.querySelector(".form__input");
     const buttonElement = formElement.querySelector(".form__submit");
       toggleButtonState(inputElement, buttonElement);
+      addButton.addEventListener("click", () => {
+        toggleButtonState(inputElement, buttonElement);
+        checkInputValidity(formElement, inputElement);
+      })
       inputElement.addEventListener("input", function () {
         checkInputValidity(formElement, inputElement);
         toggleButtonState(inputElement, buttonElement);
@@ -90,11 +122,12 @@ function addTodo(nameValue) {
         evt.preventDefault();
         addModal.hide()
       });
-    console.log(formList)
+      console.log(formList)
       formList.forEach((fieldset) => {
         setEventListeners(fieldset);
       });
     });
   };
   
+loadTasksFromLocalStorage(); 
 enableValidation();
